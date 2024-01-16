@@ -42,7 +42,7 @@ if(!file.exists('smoothed.rds')|reset){ ## If generating new estimates...
     merge(get_WT(rtdf, icol_name = 'incidence', outcol_name = 'WT_7', window = 7, wend = FALSE), by = 'time') %>%      ## Estimate using WT. Function get_WT is defined in `util.R` -- Note, this takes several minutes to generate CIs.
     select(time, true_rt, incidence, contains('Cori'), contains('WT')) 
   
-  write_rds(plot_smoothed, path = 'smoothed.rds')
+  write_rds(plot_smoothed, 'smoothed.rds')
 }else{ ## If reading saved file...
   plot_smoothed <- readRDS('smoothed.rds')
 }

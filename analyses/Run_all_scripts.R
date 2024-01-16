@@ -29,4 +29,4 @@ knitr::knit('02-make_fig_Sup_smooth_WT_Cori.Rmd')
 
 ## Save session info
 sessionInfo() %>%
-  write_rds(path = 'Session_Info.rds')
+  write_rds(file = 'Session_Info.rds')

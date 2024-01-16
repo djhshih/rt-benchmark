@@ -40,7 +40,7 @@ if(!file.exists('cori_wt_fits_rt_t65')|reset){ ## If generating new estimates...
     merge(get_cori(rtdf, icol_name = 'incidence', window = wdw), by = 'time') %>%     ## Estimate using Cori et al. Function get_cori is defined in `util.R`
     merge(get_WT(rtdf, icol_name = 'incidence', window = wdw), by = 'time')
   
-  write_rds(plot_df_rt, path = 'cori_wt_fits_rt_t65')
+  write_rds(plot_df_rt, 'cori_wt_fits_rt_t65')
 }else{ ## If reading saved file...
   plot_df_rt <- readRDS('cori_wt_fits_rt_t65')
 }
@@ -215,7 +215,7 @@ if(!file.exists('cori_wt_fits_rt_t97.rds')|reset){ ## If generating new estimate
     merge(get_WT(rtdf, icol_name = 'obs_cases', outcol_name = 'WT_symptom_onset', window = wdw), by = 'time') %>%      ## Estimate using WT at E->I transition
     select(time, true_rt, incidence, obs_cases, contains('Cori'), contains('WT')) 
   
-  write_rds(plot_df_rt, path = 'cori_wt_fits_rt_t97.rds')
+  write_rds(plot_df_rt, 'cori_wt_fits_rt_t97.rds')
 }else{ ## If reading saved file...
   plot_df_rt <- readRDS('cori_wt_fits_rt_t97.rds')
 }
@@ -253,7 +253,7 @@ if(!file.exists('cori_wt_fits_rt_t105.rds')|reset){ ## If generating new estimat
     merge(get_WT(rt_pls_gi, icol_name = 'incidence', window = wdw), by = 'time') %>%      ## Estimate using WT. Function get_WT is defined in `util.R` -- Note, this takes several minutes to generate CIs.
     merge(get_WT(rt_pls_gi, icol_name = 'obs_cases', outcol_name = 'WT_symptom_onset', window = wdw), by = 'time') %>%      ## Estimate using WT at E->I transition
     select(time, true_rt, incidence, obs_cases, contains('Cori'), contains('WT')) 
-    write_rds(plot_gi, path = 'cori_wt_fits_rt_t105.rds')
+    write_rds(plot_gi, 'cori_wt_fits_rt_t105.rds')
 }else{ ## If reading saved file...
   plot_gi <- readRDS('cori_wt_fits_rt_t105.rds')
 }

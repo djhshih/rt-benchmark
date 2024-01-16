@@ -69,7 +69,7 @@ if(!file.exists('cori_wt_fits_rt.rds')|reset){ ## If generating new estimates...
     merge(get_WT(rtdf, icol_name = 'obs_cases', outcol_name = 'WT_symptom_onset', window = wdw), by = 'time') %>%      ## Estimate using WT at E->I transition
     select(time, true_rt, incidence, obs_cases, contains('Cori'), contains('WT')) 
   
-  write_rds(plot_df_rt, path = 'cori_wt_fits_rt.rds')
+  write_rds(plot_df_rt, 'cori_wt_fits_rt.rds')
 }else{ ## If reading saved file...
   plot_df_rt <- readRDS('cori_wt_fits_rt.rds')
 }

@@ -40,4 +40,4 @@ sim_sweep(parlist)
 testplots(parlist)
 
 
-write_rds(parlist, path = 'true_pars.rds')
+write_rds(parlist, 'true_pars.rds')
