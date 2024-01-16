@@ -15,7 +15,6 @@ check_args <- function(
     is.wholenumber(n_steps_per_t) && length(n_steps_per_t) == 1 &&
       n_steps_per_t >= 1
   )
-  print(arnaught)
   stopifnot(
     is.numeric(arnaught) && all(arnaught) > 0 &&
       (length(arnaught) == 1 || length(arnaught) == n_t + 1)
