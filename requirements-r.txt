@@ -1,0 +1,7 @@
+dplyr
+tidyr
+readr
+ggplot2
+cowplot
+EpiEstim
+deSolve
